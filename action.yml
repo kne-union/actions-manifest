@@ -22,7 +22,7 @@ runs:
       shell: bash
     - uses: actions-js/push@master
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ inputs.github_token }}
         branch: master
         directory: ./workspace
         repository: 'kne-union/static-data'
