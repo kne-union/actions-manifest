@@ -12,10 +12,10 @@ runs:
         repository: 'kne-union/static-data'
         ref: 'master'
         path: ./workspace
-    - run: rm -rf ./manifest && mkdir ./manifest
       shell: bash
     - run: |
         cd ./workspace
+        rm -rf ./manifest && mkdir ./manifest
         npx @kne/npm-tools manifest
         cp -r ./build/* ./manifest
         rm -rf ./build
