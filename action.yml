@@ -8,7 +8,7 @@ runs:
         repository: 'kne-union/static-data'
         ref: 'master'
         path: ./workspace
-    - run: rf -rf ./manifest && mkdir ./manifest
+    - run: rm -rf ./manifest && mkdir ./manifest
       shell: bash
     - run: |
         cd ./workspace
