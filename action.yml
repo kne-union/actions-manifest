@@ -14,10 +14,7 @@ runs:
         cd ./workspace
         npx @kne/npm-tools manifest
         cp -r ./build/* ../manifest
-      shell: bash
-    - run: rm -rf ./workspace
-      shell: bash
-    - run: git commit -am "Regenerate Manifest By Actions"
-      shell: bash
-    - run: git push origin master
+        rm -rf ./build
+        git commit -am "Regenerate Manifest By Actions"
+        git push origin master
       shell: bash
