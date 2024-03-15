@@ -18,3 +18,5 @@ runs:
         rm -rf ./build
       shell: bash
     - uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        branch: 'master'
