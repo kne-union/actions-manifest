@@ -15,9 +15,8 @@ runs:
         npx @kne/npm-tools manifest
         cp -r ./build/* ../manifest
         rm -rf ./build
-        git config --global user.name "actions"
-        git add .
-        git status
+        git config --local user.email "sunandmoon001@163.com"
+        git config --local user.name "actions"
         git commit -am "Regenerate Manifest By Actions"
-        git push origin master
+        git push -f origin master
       shell: bash
