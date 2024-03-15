@@ -7,8 +7,6 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - run: echo "Hello $INPUT_TOKEN."
-      shell: bash
     - uses: actions/checkout@v4
       with:
         repository: 'kne-union/static-data'
