@@ -17,11 +17,12 @@ runs:
     - run: |
         cd ./workspace
         npx @kne/npm-tools manifest
-        cp -r ./build/* ../manifest
+        cp -r ./build/* ./manifest
         rm -rf ./build
-        rm -rf .git
       shell: bash
-    - uses: peaceiris/actions-gh-pages@v3
+    - uses: actions-js/push@master
       with:
-        github_token: ${{ inputs.github_token }}
-        publish_dir: ./workspace
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: master
+        directory: ./workspace
+        repository: 'kne-union/static-data'
