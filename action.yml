@@ -11,6 +11,7 @@ runs:
       with:
         repository: 'kne-union/static-data'
         ref: 'master'
+        token: ${{ inputs.github_token }}
     - run: |
         rm -rf ./manifest && mkdir ./manifest
         npx @kne/npm-tools manifest
