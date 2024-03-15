@@ -1,5 +1,9 @@
 name: "Generate Ued manifest"
 description: "生成ued所需的所有所需描述文件并且推送至website项目"
+inputs:
+  github_token:
+    description: 'Set a generated GITHUB_TOKEN for pushing to the remote branch.'
+    required: false
 runs:
   using: 'composite'
   steps:
@@ -19,5 +23,5 @@ runs:
       shell: bash
     - uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ inputs.github_token }}
         publish_dir: ./workspace
