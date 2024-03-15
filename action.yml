@@ -15,8 +15,9 @@ runs:
         npx @kne/npm-tools manifest
         cp -r ./build/* ../manifest
         rm -rf ./build
-        git config --local user.email "sunandmoon001@163.com"
-        git config --local user.name "actions"
-        git commit -am "Regenerate Manifest By Actions"
-        git push -f origin master
+        rm -rf .git
       shell: bash
+    - uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./workspace
